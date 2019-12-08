@@ -1,0 +1,24 @@
+{
+  "name": "edit-pdf-online",
+  "version": "1.0.0",
+  "description": "edit-pdf-online",
+  "main": "app.js",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "keywords": ["edit-pdf-online"],
+
+  "scripts": {
+    "install": "npm run install_frontend  &&  npm run install_backend",
+    "install_frontend": "npm run install_frontend --prefix frontend/",
+    "install_backend": "npm run install_backend --prefix backend/",
+
+    "start_dev": "npm run dev_frontend  &&  npm run dev_backend ",
+    "dev_frontend": "npm run dev --prefix frontend/",
+    "dev_backend": "npm run dev --prefix backend/",
+
+    "start": "npm run frontend  &&  npm run backend ",
+    "frontend": "npm run-script pro --prefix frontend/",
+    "backend": "npm run-script pro --prefix backend/"
+  }
+}

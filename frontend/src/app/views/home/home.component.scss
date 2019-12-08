@@ -1,0 +1,71 @@
+:host{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #666;
+
+  ::ng-deep .ng2-pdf-viewer-container {
+    .pdfViewer .page{
+      margin: 10px auto 20px !important;
+    }
+  }
+
+  .nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 99;
+    background: rgba(51, 51, 51, 0.95);
+    padding: 5px 0;
+    position: fixed;
+
+    .list{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-grow: 1;
+      button{
+        width: 10%;
+        height: 35px;
+        display: block;
+      }
+      .type-active{
+        background: green;
+        border-radius: 2px;
+      }
+    }
+    .progress{
+      flex-grow: 1;
+      width: 100%;
+      height: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 10px 0 5px 0;
+      span{
+        display: none;
+        font-size: 0.8em;
+      }
+      .bg{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: #e6e6e6;
+        .bar{
+          height: 100%;
+          background: #428000;
+        }
+      }
+    }
+  }
+  .pdf-content{
+    padding-top: 45px;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

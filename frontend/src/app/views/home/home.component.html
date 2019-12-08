@@ -1,0 +1,39 @@
+<nav class="nav" id="nav">
+  <div class="list">
+    <button style="cursor: pointer"
+            [class.type-active]="switchActionType.insert === selectedActionType"
+            (click)="selectAction(switchActionType.insert)"
+    >Insert text</button>
+    <button style="cursor: text"
+            [class.type-active]="switchActionType.select === selectedActionType"
+            (click)="selectAction(switchActionType.select)"
+    >Select text</button>
+    <button (click)="removeOneChange()"> Back </button>
+    <button (click)="onSendHTML()">Save PDF</button>
+  </div>
+  <div class="progress" *ngIf="!isLoaded && progressData" >
+    <div class="bg">
+      <div class="bar" [style.width]="progressData.loaded / progressData.total * 100 + '%'"></div>
+    </div>
+    <span>{{ getInt(progressData.loaded / progressData.total * 100) }}%</span>
+  </div>
+</nav>
+
+
+<div class="pdf-content">
+
+  <pdf-viewer
+    [src]="pdfSrc"
+    [render-text]="true"
+    [(page)]="showPage"
+    [show-all]="showAllPage"
+    [show-borders]="false"
+    [zoom]="0.9"
+    [autoresize]="false"
+    [original-size]="true"
+    (on-progress)="onProgress($event)"
+    (page-rendered)="pageRendered($event)"
+    (after-load-complete)="afterLoadComplete($event)"
+  ></pdf-viewer>
+
+</div>

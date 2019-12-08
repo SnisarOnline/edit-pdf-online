@@ -1,0 +1,29 @@
+{
+  "name": "edit-pdf-online-backend",
+  "version": "0.0.1",
+  "description": "edit-pdf-online-backend",
+  "main": "app.js",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "edit-pdf-online"
+  ],
+  "scripts": {
+    "install_backend": "npm install",
+    "pro": "cross-env NODE_ENV=production node ./app.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "5.2.0",
+    "express": "4.16.4",
+    "pdftohtml": "^0.2.0",
+    "puppeteer": "^2.0.0",
+    "winston": "3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.10"
+  }
+}
